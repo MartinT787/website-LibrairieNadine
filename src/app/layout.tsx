@@ -47,11 +47,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           </Link>
           
           <nav className="hidden lg:flex gap-8 font-medium text-sm text-gray-600">
-            <Link href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy transition-colors font-bold text-gray-900">{t.navB2S}</Link>
             <Link href={`/?lang=${lang.toLowerCase()}#offerings`} className="hover:text-brand-burgundy transition-colors">{t.navOfferings}</Link>
             <Link href={`/?lang=${lang.toLowerCase()}#gallery`} className="hover:text-brand-burgundy transition-colors">{t.navGallery}</Link>
             <Link href={`/?lang=${lang.toLowerCase()}#story`} className="hover:text-brand-burgundy transition-colors">{t.navStory}</Link>
             <Link href={`/?lang=${lang.toLowerCase()}#visit`} className="hover:text-brand-burgundy transition-colors">{t.navVisit}</Link>
+            <Link href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy transition-colors font-bold text-gray-900">{t.navB2S}</Link>
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6">
@@ -96,11 +96,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               <LanguageButton code="AR" label="ع" />
             </div>
             <nav className="flex flex-col px-6 pb-4 gap-4 font-medium text-lg text-gray-800">
-              <Link onClick={() => setMobileMenuOpen(false)} href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy font-bold text-gray-900 border-b pb-2">{t.navB2S}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#offerings`} className="hover:text-brand-burgundy border-b pb-2">{t.navOfferings}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#gallery`} className="hover:text-brand-burgundy border-b pb-2">{t.navGallery}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#story`} className="hover:text-brand-burgundy border-b pb-2">{t.navStory}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#visit`} className="hover:text-brand-burgundy border-b pb-2">{t.navVisit}</Link>
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy font-bold text-gray-900 border-b pb-2">{t.navB2S}</Link>
               <a 
                 href="https://wa.me/96181255348" 
                 target="_blank" 
