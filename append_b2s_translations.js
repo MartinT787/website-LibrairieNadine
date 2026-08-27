@@ -1,0 +1,85 @@
+const fs = require('fs');
+let content = fs.readFileSync('src/translations.ts', 'utf8');
+
+const newEn = `
+    navB2S: "Back to school",
+    b2sEye: "BACK TO SCHOOL IN ZAHLÉ",
+    b2sTitle: "Everything for a confident start.",
+    b2sDesc: "For generations, families and schools across Zahlé and the Bekaa have trusted Librairie Nadine to help prepare students for the year ahead.",
+    b2sEssTitle: "School-season essentials",
+    b2sEssDesc: "We provide the textbooks required by regional schools across all grade levels, together with stationery, art materials, and everyday school essentials.",
+    b2s01Num: "01",
+    b2s01Title: "School books for every grade",
+    b2s01Desc: "Textbooks and workbooks required by regional schools, across all grade levels, with Arabic, French, and English materials.",
+    b2s02Num: "02",
+    b2s02Title: "Complimentary book covering",
+    b2s02Desc: "Books purchased from Librairie Nadine can be professionally covered at no additional charge.",
+    b2s03Num: "03",
+    b2s03Title: "Notebooks & writing supplies",
+    b2s03Desc: "Notebooks, paper, pens, pencils, markers, erasers, sharpeners, and geometry essentials.",
+    b2s04Num: "04",
+    b2s04Title: "Art & classroom supplies",
+    b2s04Desc: "Coloring and creative materials, classroom tools, folders, files, and organizational essentials.",
+    b2s05Num: "05",
+    b2s05Title: "School bags & pencil cases",
+    b2s05Desc: "Backpacks, wheeled bags, pencil cases, and practical accessories for different ages.",
+    b2s06Num: "06",
+    b2s06Title: "Lunch boxes & bottles",
+    b2s06Desc: "Lunch sets, reusable bottles, insulated drinkware, and children's designs.",`;
+
+const newFr = `
+    navB2S: "Rentrée scolaire",
+    b2sEye: "LA RENTRÉE À ZAHLÉ",
+    b2sTitle: "Tout pour un départ en toute confiance.",
+    b2sDesc: "Depuis des générations, les familles et les écoles de Zahlé et de la Bekaa font confiance à la Librairie Nadine pour aider à préparer les élèves pour l'année à venir.",
+    b2sEssTitle: "Les essentiels de la rentrée",
+    b2sEssDesc: "Nous fournissons les manuels requis par les écoles régionales pour tous les niveaux, ainsi que de la papeterie, du matériel artistique et les essentiels scolaires de tous les jours.",
+    b2s01Num: "01",
+    b2s01Title: "Livres scolaires pour tous niveaux",
+    b2s01Desc: "Manuels et cahiers d'exercices requis par les écoles régionales, pour tous les niveaux, avec du matériel en arabe, français et anglais.",
+    b2s02Num: "02",
+    b2s02Title: "Couverture de livres gratuite",
+    b2s02Desc: "Les livres achetés à la Librairie Nadine peuvent être couverts professionnellement sans frais supplémentaires.",
+    b2s03Num: "03",
+    b2s03Title: "Cahiers et fournitures d'écriture",
+    b2s03Desc: "Cahiers, papier, stylos, crayons, marqueurs, gommes, taille-crayons et essentiels de géométrie.",
+    b2s04Num: "04",
+    b2s04Title: "Art et fournitures de classe",
+    b2s04Desc: "Matériel de coloriage et créatif, outils de classe, dossiers, classeurs et essentiels d'organisation.",
+    b2s05Num: "05",
+    b2s05Title: "Sacs d'école et trousses",
+    b2s05Desc: "Sacs à dos, sacs à roulettes, trousses et accessoires pratiques pour différents âges.",
+    b2s06Num: "06",
+    b2s06Title: "Boîtes à lunch et bouteilles",
+    b2s06Desc: "Ensembles repas, bouteilles réutilisables, récipients isothermes et designs pour enfants.",`;
+
+const newAr = `
+    navB2S: "العودة إلى المدرسة",
+    b2sEye: "العودة إلى المدرسة في زحلة",
+    b2sTitle: "كل شيء لبداية واثقة.",
+    b2sDesc: "لأجيال، وثقت العائلات والمدارس في جميع أنحاء زحلة والبقاع بمكتبة نادين للمساعدة في إعداد الطلاب للعام الدراسي القادم.",
+    b2sEssTitle: "أساسيات الموسم الدراسي",
+    b2sEssDesc: "نحن نوفر الكتب المدرسية المطلوبة من قبل المدارس الإقليمية عبر جميع المراحل الدراسية، إلى جانب القرطاسية، المواد الفنية، والأساسيات المدرسية اليومية.",
+    b2s01Num: "01",
+    b2s01Title: "كتب مدرسية لكل صف",
+    b2s01Desc: "الكتب المدرسية ودفاتر التمارين المطلوبة من قبل المدارس الإقليمية، عبر جميع المراحل الدراسية، مع مواد باللغة العربية والفرنسية والإنجليزية.",
+    b2s02Num: "02",
+    b2s02Title: "تغليف مجاني للكتب",
+    b2s02Desc: "الكتب المشتراة من مكتبة نادين يمكن تغليفها باحترافية بدون تكلفة إضافية.",
+    b2s03Num: "03",
+    b2s03Title: "دفاتر وأدوات كتابة",
+    b2s03Desc: "دفاتر، ورق، أقلام حبر، أقلام رصاص، أقلام تحديد، محايات، مباري، وأساسيات الهندسة.",
+    b2s04Num: "04",
+    b2s04Title: "أدوات فنية ولوازم الصف",
+    b2s04Desc: "مواد التلوين والإبداع، أدوات الصف، مجلدات، ملفات، وأساسيات التنظيم.",
+    b2s05Num: "05",
+    b2s05Title: "حقائب مدرسية ومقالم",
+    b2s05Desc: "حقائب ظهر، حقائب بعجلات، مقالم، وإكسسوارات عملية لمختلف الأعمار.",
+    b2s06Num: "06",
+    b2s06Title: "صناديق طعام وقوارير",
+    b2s06Desc: "أطقم غداء، قوارير قابلة لإعادة الاستخدام، أوعية شرب عازلة للحرارة، وتصميمات للأطفال.",`;
+
+content = content.replace(/val03Text: "[^"]+",\n/g, match => match + newEn + '\n');
+content = content.replace(/val03Text: "[^"]+",\n\s*\}\,\n\s*FR/g, match => match.replace(/\n\s*\}\,\n\s*FR/, newEn + '\n  },\n  FR'));
+
+// Let's use a simpler replacement strategy.
