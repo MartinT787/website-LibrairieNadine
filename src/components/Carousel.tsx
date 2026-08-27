@@ -48,17 +48,17 @@ export default function Carousel({ images }: CarouselProps) {
       {/* Left Arrow */}
       <button 
         onClick={goToPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-brand-blue text-white w-12 h-12 flex items-center justify-center rounded-lg border-2 border-white/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-brand-blue text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-lg border-2 border-white/50 backdrop-blur-sm transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
       >
-        <ChevronLeft size={32} />
+        <ChevronLeft size={28} className="md:w-8 md:h-8" />
       </button>
 
       {/* Right Arrow */}
       <button 
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-brand-blue text-white w-12 h-12 flex items-center justify-center rounded-lg border-2 border-white/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-brand-blue text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-lg border-2 border-white/50 backdrop-blur-sm transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
       >
-        <ChevronRight size={32} />
+        <ChevronRight size={28} className="md:w-8 md:h-8" />
       </button>
 
       {/* Play/Pause & Dots Container */}

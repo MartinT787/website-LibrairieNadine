@@ -1,20 +1,22 @@
 "use client";
 
 import "./globals.css";
-import { MapPin, Phone, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, MessageCircle, Instagram, Facebook, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const { lang, setLang, t } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const LanguageButton = ({ code, label }: { code: 'EN'|'FR'|'AR', label: string }) => {
     const isActive = lang === code;
     return (
       <button 
         onClick={() => setLang(code)}
-        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all border-2
+        className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-lg transition-all border-2
           ${isActive 
             ? 'border-brand-blue bg-brand-burgundy text-white' 
             : 'border-gray-300 bg-white text-gray-600 hover:border-gray-400'
@@ -38,9 +40,9 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <header className="border-b px-6 py-4 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <header className="border-b px-4 md:px-6 py-3 md:py-4 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-sm z-50 shadow-sm">
           <Link href={`/?lang=${lang.toLowerCase()}`} className="flex items-center gap-3">
-            <Image src="/logo.jpeg" alt="Librairie Nadine Logo" width={50} height={50} className="rounded-md object-cover" />
+            <Image src="/logo.jpeg" alt="Librairie Nadine Logo" width={50} height={50} className="rounded-md object-cover w-[40px] h-[40px] md:w-[50px] md:h-[50px]" />
             <span className="font-bold text-2xl tracking-tight hidden sm:block text-brand-burgundy">Librairie Nadine</span>
           </Link>
           
@@ -52,7 +54,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             <Link href={`/?lang=${lang.toLowerCase()}#visit`} className="hover:text-brand-burgundy transition-colors">{t.navVisit}</Link>
           </nav>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
             <div className="flex items-center gap-3" dir="ltr">
               <LanguageButton code="EN" label="EN" />
               <LanguageButton code="FR" label="FR" />
@@ -68,8 +70,37 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               <MessageCircle size={18} />
               {t.whatsapp}
             </a>
+            <button 
+              className="lg:hidden p-2 -mr-2 text-brand-burgundy"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </header>
+        
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white border-b shadow-lg absolute w-full z-40">
+            <nav className="flex flex-col px-6 py-4 gap-4 font-medium text-lg text-gray-800">
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy font-bold text-gray-900 border-b pb-2">{t.navB2S}</Link>
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#offerings`} className="hover:text-brand-burgundy border-b pb-2">{t.navOfferings}</Link>
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#gallery`} className="hover:text-brand-burgundy border-b pb-2">{t.navGallery}</Link>
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#story`} className="hover:text-brand-burgundy border-b pb-2">{t.navStory}</Link>
+              <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#visit`} className="hover:text-brand-burgundy border-b pb-2">{t.navVisit}</Link>
+              <a 
+                href="https://wa.me/96181255348" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 text-white bg-green-600 px-5 py-3 rounded-full mt-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <MessageCircle size={20} />
+                {t.whatsapp}
+              </a>
+            </nav>
+          </div>
+        )}
         <main className="flex-1">
           {children}
         </main>

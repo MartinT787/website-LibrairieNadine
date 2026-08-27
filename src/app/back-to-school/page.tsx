@@ -16,7 +16,7 @@ export default function BackToSchool() {
         <div className="flex flex-col lg:flex-row bg-[#4A1D1D]">
           <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center">
             <div className="text-yellow-500 text-xs font-bold tracking-[0.2em] uppercase mb-6">{t.b2sEye}</div>
-            <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">{t.b2sTitle}</h2>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-tight">{t.b2sTitle}</h2>
             <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-lg mb-12">
               {t.b2sDesc}
             </p>
@@ -41,7 +41,7 @@ export default function BackToSchool() {
 
 
       {/* CREATIVE PHOTO GALLERY */}
-      <section className="px-6 py-24 bg-white">
+      <section className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
             {/* Large feature image (spans 8 cols, 2 rows) */}

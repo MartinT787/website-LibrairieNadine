@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </div>
       </section>      {/* WHAT WE OFFER SECTION */}
-      <section id="offerings" className="px-6 py-24 bg-white">
+      <section id="offerings" className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-brand-burgundy">{t.offeringsTitle}</h2>
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* GALLERY SHOWCASE */}
-      <section id="gallery" className="py-24 bg-brand-burgundy text-white overflow-hidden relative">
+      <section id="gallery" className="py-16 md:py-24 bg-brand-burgundy text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
           <div>
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* STORY & VALUES SECTION */}
-      <section id="story" className="px-6 py-24 bg-white">
+      <section id="story" className="px-6 py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-5 bg-gradient-to-r from-[#602525] to-[#4A1D1D] text-white px-8 py-5 rounded-2xl shadow-xl mb-10 border border-[#602525]/20 transform transition-transform hover:scale-105">
@@ -138,7 +138,7 @@ export default function Home() {
 
       
       {/* VALUES / FOUNDING GRID SECTION */}
-      <section className="px-6 py-16 bg-white border-t border-gray-100">
+      <section className="px-6 py-12 md:py-16 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
           
           <div className="md:pr-12 md:border-r border-gray-200">
@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* VISIT US SECTION */}
-      <section id="visit" className="px-6 py-24 bg-brand-light border-t">
+      <section id="visit" className="px-6 py-16 md:py-24 bg-brand-light border-t">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-8 text-brand-burgundy">{t.visitTitle}</h2>
           
