@@ -110,7 +110,7 @@ export default function Home() {
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               {t.storyP1}
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium mb-8">
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
               {t.storyP2}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
