@@ -55,7 +55,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className="flex items-center gap-4 md:gap-6">
-            <div className="flex items-center gap-3" dir="ltr">
+            <div className="hidden md:flex items-center gap-3" dir="ltr">
               <LanguageButton code="EN" label="EN" />
               <LanguageButton code="FR" label="FR" />
               <LanguageButton code="AR" label="ع" />
@@ -70,6 +70,14 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               <MessageCircle size={18} />
               {t.whatsapp}
             </a>
+            
+            <Link 
+              href={`/back-to-school?lang=${lang.toLowerCase()}`} 
+              className="lg:hidden bg-yellow-500 text-[#4A1D1D] px-3 py-1.5 md:px-4 md:py-2 rounded-full font-bold text-xs md:text-sm shadow-sm whitespace-nowrap"
+            >
+              {t.navB2S}
+            </Link>
+
             <button 
               className="lg:hidden p-2 -mr-2 text-brand-burgundy"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -82,7 +90,12 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b shadow-lg absolute w-full z-40">
-            <nav className="flex flex-col px-6 py-4 gap-4 font-medium text-lg text-gray-800">
+            <div className="flex items-center justify-center gap-4 pt-6 pb-4 border-b" dir="ltr">
+              <LanguageButton code="EN" label="EN" />
+              <LanguageButton code="FR" label="FR" />
+              <LanguageButton code="AR" label="ع" />
+            </div>
+            <nav className="flex flex-col px-6 pb-4 gap-4 font-medium text-lg text-gray-800">
               <Link onClick={() => setMobileMenuOpen(false)} href={`/back-to-school?lang=${lang.toLowerCase()}`} className="hover:text-brand-burgundy font-bold text-gray-900 border-b pb-2">{t.navB2S}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#offerings`} className="hover:text-brand-burgundy border-b pb-2">{t.navOfferings}</Link>
               <Link onClick={() => setMobileMenuOpen(false)} href={`/?lang=${lang.toLowerCase()}#gallery`} className="hover:text-brand-burgundy border-b pb-2">{t.navGallery}</Link>
