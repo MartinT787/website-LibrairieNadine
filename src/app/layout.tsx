@@ -135,10 +135,10 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               </div>
               <p className="text-sm text-gray-600 mb-6">{t.footerDesc}</p>
               <div className="flex gap-4 justify-center md:justify-start">
-                <a href="https://www.facebook.com/NadineBookstore?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noreferrer" className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1877F2] hover:text-white transition-colors shadow-sm" aria-label="Facebook">
+                <a href="https://www.facebook.com/NadineBookstore?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noreferrer" className="w-20 h-20 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm" aria-label="Facebook">
                   <Facebook size={40} />
                 </a>
-                <a href="https://www.instagram.com/librairienadine" target="_blank" rel="noreferrer" className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E4405F] hover:text-white transition-colors shadow-sm" aria-label="Instagram">
+                <a href="https://www.instagram.com/librairienadine" target="_blank" rel="noreferrer" className="w-20 h-20 rounded-full bg-[#E4405F] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm" aria-label="Instagram">
                   <Instagram size={40} />
                 </a>
               </div>
