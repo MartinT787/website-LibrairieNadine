@@ -105,12 +105,21 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 href="https://wa.me/96181255348" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 text-white bg-green-600 px-5 py-3 rounded-full mt-2"
+                className="flex items-center justify-center gap-2 text-white bg-green-600 px-5 py-3 rounded-full mt-2 shadow-sm"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <MessageCircle size={20} />
                 {t.whatsapp}
               </a>
+              
+              <div className="mt-4 pt-4 border-t flex flex-col gap-3 text-sm text-gray-500">
+                <a href="tel:+9618805641" className="flex items-center gap-2 hover:text-brand-burgundy">
+                  <Phone size={16} /> +961 8 805 641
+                </a>
+                <a href="https://maps.google.com/?q=Librairie+Nadine+Zahle" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-brand-burgundy">
+                  <MapPin size={16} /> {t.shortAddress}
+                </a>
+              </div>
             </nav>
           </div>
         )}
